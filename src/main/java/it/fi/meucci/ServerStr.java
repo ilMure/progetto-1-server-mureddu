@@ -3,7 +3,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class SeverStr {
+public class ServerStr {
     ServerSocket server = null;
     Socket client = null;
     String stringaRicevuta = null;
@@ -34,9 +34,14 @@ public class SeverStr {
             stringaRisposta = stringaRicevuta.toUpperCase();
             System.out.println("7 invio la stringa di risposta al client...");
             outVersoClient.writeBytes(stringaRisposta+"\n");
+            
+            System.out.println("9 SERVER: ho terminato... arrivederci");
+            client.close();
         } catch (Exception e) {
             System.out.println("Errore durante la comunicazione");
         }
         
     }
+
+    
 }
